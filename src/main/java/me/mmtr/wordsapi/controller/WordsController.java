@@ -1,6 +1,7 @@
 package me.mmtr.wordsapi.controller;
 
 import me.mmtr.wordsapi.service.WordsService;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController("/api/words")
