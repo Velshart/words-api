@@ -1,6 +1,7 @@
 package me.mmtr.wordsapi.service;
 
 import jakarta.annotation.PostConstruct;
+import me.mmtr.wordsapi.util.WordsList;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
@@ -20,5 +21,9 @@ public class WordsService {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public WordsList.Builder buildWordsList() {
+        return new WordsList.Builder().fromWordsList(words);
     }
 }
