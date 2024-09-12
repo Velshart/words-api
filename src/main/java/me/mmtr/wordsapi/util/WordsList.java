@@ -8,7 +8,6 @@ public class WordsList {
     public WordsList(Builder builder) {
         this.WORDS = builder.words;
     }
-
     public List<String> getWords() {
         return WORDS;
     }
