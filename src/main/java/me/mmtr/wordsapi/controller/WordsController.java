@@ -49,6 +49,6 @@ public class WordsController {
             wordsListBuilder.amount(amount);
         }
 
-        return new Words(ATOMIC_LONG.incrementAndGet(), wordsListBuilder.build().getWords());
+        return new Words(ATOMIC_LONG.incrementAndGet(), wordsListBuilder.build().getWordsList());
     }
 }
