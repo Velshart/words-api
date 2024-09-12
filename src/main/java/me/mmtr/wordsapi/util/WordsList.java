@@ -24,39 +24,34 @@ public class WordsList {
             return this;
         }
 
-        public Builder length(int length) {
+        public void length(int length) {
             this.words = this.words.stream()
                     .filter(word -> word.length() == length)
                     .toList();
-            return this;
         }
 
-        public Builder containing(CharSequence sequence) {
+        public void containing(CharSequence sequence) {
             this.words = this.words.stream()
                     .filter(word -> word.contains(sequence))
                     .toList();
-            return this;
         }
 
-        public Builder startingWith(String prefix) {
+        public void startingWith(String prefix) {
             this.words = this.words.stream()
                     .filter(word -> word.startsWith(prefix))
                     .toList();
-            return this;
         }
 
-        public Builder endingWith(String prefix) {
+        public void endingWith(String prefix) {
             this.words = this.words.stream()
                     .filter(word -> word.endsWith(prefix))
                     .toList();
-            return this;
         }
 
-        public Builder amount(int amount) {
+        public void amount(int amount) {
             if (words.size() > amount) {
                 this.words = this.words.subList(0, amount);
             }
-            return this;
         }
 
         public WordsList build() {
