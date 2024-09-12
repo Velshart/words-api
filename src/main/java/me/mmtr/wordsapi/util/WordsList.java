@@ -1,5 +1,6 @@
 package me.mmtr.wordsapi.util;
 
+import java.util.Collections;
 import java.util.List;
 
 public class WordsList {
@@ -8,6 +9,7 @@ public class WordsList {
     public WordsList(Builder builder) {
         this.WORDS = builder.words;
     }
+
     public List<String> getWordsList() {
         return WORDS;
     }
@@ -17,6 +19,7 @@ public class WordsList {
 
         public Builder fromWordsList(List<String> words) {
             this.words = words;
+            Collections.shuffle(this.words);
 
             return this;
         }

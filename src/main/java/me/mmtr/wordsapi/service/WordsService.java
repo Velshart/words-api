@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Stream;
 
@@ -17,7 +18,7 @@ public class WordsService {
     @PostConstruct
     public void init() {
         try (Stream<String> wordsStream = Files.lines(Path.of("words.txt"))) {
-            this.words = wordsStream.toList();
+            this.words = new ArrayList<>(wordsStream.toList());
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
