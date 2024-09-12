@@ -24,12 +24,12 @@ public class WordsController {
     @GetMapping("/get")
     public Words wordsList(@RequestParam(required = false) Integer length,
                            @RequestParam(required = false) CharSequence containing,
-                           @RequestParam(required = false) String start,
-                           @RequestParam(required = false) String end,
+                           @RequestParam(required = false) String starting,
+                           @RequestParam(required = false) String ending,
                            @RequestParam(required = false, defaultValue = "1") Integer amount) {
         WordsList.Builder wordsListBuilder = WORDS_SERVICE.buildWordsList();
 
-        if (length != null) {
+        if (length != null && length > 0) {
             wordsListBuilder.length(length);
         }
 
@@ -37,15 +37,15 @@ public class WordsController {
             wordsListBuilder.containing(containing);
         }
 
-        if (start != null) {
-            wordsListBuilder.startingWith(start);
+        if (starting != null) {
+            wordsListBuilder.startingWith(starting);
         }
 
-        if (end != null) {
-            wordsListBuilder.endingWith(end);
+        if (ending != null) {
+            wordsListBuilder.endingWith(ending);
         }
 
-        if(amount != null) {
+        if(amount != null && amount > 0) {
             wordsListBuilder.amount(amount);
         }
 
