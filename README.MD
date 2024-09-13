@@ -79,7 +79,7 @@ In order to receive more precise response, multiple parameters can be included i
 ###### 
 ##### Example request:
 ```
-GET http://localhost:8080/api/words/get?start=a&length=10&amount=4
+GET http://localhost:8080/api/words/get?starting=a&length=10&amount=4
 ```
 ###### Example response:
  ```json
