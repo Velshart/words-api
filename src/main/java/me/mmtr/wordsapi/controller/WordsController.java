@@ -45,10 +45,9 @@ public class WordsController {
             wordsListBuilder.endingWith(ending);
         }
 
-        if(amount != null && amount > 0) {
+        if (amount != null && amount > 0) {
             wordsListBuilder.amount(amount);
         }
-
         return new Words(ATOMIC_LONG.incrementAndGet(), wordsListBuilder.build().getWordsList());
     }
 }
